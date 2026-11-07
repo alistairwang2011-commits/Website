@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alistair Wang</title>
+<style>
+:root {
+  --bg: #faf8f5; --fg: #1d1b19; --muted: #6b665f; --accent: #c2410c; --card: #ffffff; --line: #e6e1d9;
+  color-scheme: light;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #161412; --fg: #f3efe9; --muted: #a39d94; --accent: #fb923c; --card: #1f1c19; --line: #322e29;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #161412; --fg: #f3efe9; --muted: #a39d94; --accent: #fb923c; --card: #1f1c19; --line: #322e29;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--fg);
+  font-family: Georgia, "Times New Roman", serif; line-height: 1.65;
+}
+main { max-width: 640px; margin: 0 auto; padding: 72px 24px 48px; }
+.eyebrow { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin: 0 0 12px; }
+h1 { font-size: clamp(2.4rem, 8vw, 3.6rem); line-height: 1.1; margin: 0 0 20px; font-weight: 700; }
+.lede { font-size: 1.2rem; color: var(--muted); margin: 0 0 40px; }
+h2 { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: 48px 0 16px; border-top: 1px solid var(--line); padding-top: 24px; }
+p { margin: 0 0 16px; }
+.links { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.links a, .links .static {
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  padding: 16px 18px; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  color: var(--fg); text-decoration: none; font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  transition: border-color .15s, transform .15s;
+}
+.links a:hover, .links a:focus-visible { border-color: var(--accent); transform: translateY(-1px); outline: none; }
+.links span:last-child { color: var(--muted); font-size: .9rem; overflow-wrap: anywhere; text-align: right; }
+.links button.static { width: 100%; cursor: pointer; font-size: 1rem; text-align: left; }
+.links button.static:hover, .links button.static:focus-visible { border-color: var(--accent); outline: none; }
+footer { margin-top: 56px; color: var(--muted); font-size: .85rem; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .38;
+  background: url(data:image/jpeg;base64,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) center / cover no-repeat; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) body::before { opacity: .28; } }
+:root[data-theme="dark"] body::before { opacity: .28; }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Hello, I’m</p>
+  <h1>Alistair Wang</h1>
+  <p class="lede">Just a normal guy. :)</p>
+
+  <h2>About</h2>
+  <p>Hi, I’m Alistair. Online, I go by hampter. I’m just a normal guy, a somewhat beginner coder who’s still learning, and I like hampters.</p>
+  <p>If you want to say hi, you can reach me with any of the links below.</p>
+
+  <h2>Get in touch</h2>
+  <ul class="links">
+    <li><a href="mailto:alistairwang2011@gmail.com"><span>Email</span><span>alistairwang2011@gmail.com</span></a></li>
+    <li><a href="https://github.com/alistairwang2011-commits" target="_blank" rel="noopener"><span>GitHub</span><span>@alistairwang2011-commits</span></a></li>
+    <li><a href="https://discord.com/users/1061840465944649840" target="_blank" rel="noopener"><span>Discord</span><span>sousousouffle (hampter)</span></a></li>
+  </ul>
+
+  <footer>© <span id="yr">2026</span> Alistair Wang</footer>
+</main>
+<script>document.getElementById("yr").textContent = new Date().getFullYear();</script>
+</body>
+</html>
